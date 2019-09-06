@@ -26,7 +26,8 @@ Configure the module in your `config.js` file.
 
 To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
-modules: [
+modules: 
+[
 	{
 		module: 'MMM-CatFacts',
 		position: 'fullscreen_above',
@@ -34,7 +35,7 @@ modules: [
 			title: "CatFacts",
 			updateInterval: 300 * 1000, // every 300 seconds
 			fadeSpeed: 4 * 1000, // four seconds
-	},
+			},
 	}
 ]
 ````
