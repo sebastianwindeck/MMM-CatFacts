@@ -35,7 +35,9 @@ module.exports = NodeHelper.create({
                 if (!error && res.statusCode === 200) {
                     var result = JSON.parse(res.body);
                     parent.sendSocketNotification('CATFACT_RESULT', result);
+
                 }
+                console.log(result);
             });
 
             res.on("end", function (parent) {
