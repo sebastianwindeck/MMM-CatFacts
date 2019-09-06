@@ -5,15 +5,8 @@ Just a little simple plugin for MagicMirror to access the API of  [CatFacts](htt
 
 **Screenshot**
 
-![](.github/example-winter.png)
+![](screenshot.jpg)
 
-**Screenshot theme "love"**
-
-![](.github/example-love.png)
-
-**Screenshot theme "water"**
-
-![](.github/example-water.png)
 
 ## Installation
 
