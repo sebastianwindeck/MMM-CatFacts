@@ -27,13 +27,18 @@ Module.register('MMM-CatFacts', {
 	getDom: function() {
 		Log.log('getDom');
 		var wrapper = document.createElement("div");
+		var header  = document.createElement("div");
+		header.className = "small dimmed";
+		header.style.textAlign = "center";
+		header.style.margin = "0 auto";
+		header.innerHTML = this.translate("CatFacts");
+		wrapper.appendChild(catfact);
 
 		var catfact = document.createElement("div");
 		catfact.className = "bright light medium";
 		catfact.style.textAlign = "center";
 		catfact.style.margin = "0 auto";
 		catfact.innerHTML = this.result["fact"];
-
 		wrapper.appendChild(catfact);
 		return wrapper;
 	},
