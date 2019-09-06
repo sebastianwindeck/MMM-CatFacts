@@ -14,7 +14,6 @@ module.exports = NodeHelper.create({
     },
 
     getCatFact: function (url) {
-        console.log('MMM-CatFacts helper started getCatFact');
         var parent = this;
 
         let options = {
@@ -31,12 +30,10 @@ module.exports = NodeHelper.create({
             var chunks = [];
 
             res.on("data", function (chunk) {
-                console.log('MMM-CatFacts helper started getCatFact data');
                 chunks.push(chunk);
             });
 
             res.on("end", function (chunk) {
-                console.log('MMM-CatFacts helper started getCatFact end');
                 var body = Buffer.concat(chunks);
                 console.log(body.toString());
                 var result = JSON.parse(body);

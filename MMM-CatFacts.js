@@ -8,11 +8,11 @@
 
 Module.register('MMM-CatFacts', {
 
-	result: {catfact: "Loading cat fact ..."},
+	result: {fact: "Loading cat fact ..."},
 
 	defaults: {
 		title: "CatFacts",
-		updateInterval: 60 * 1000, // every 60 seconds
+		updateInterval: 300 * 1000, // every 300 seconds
 		fadeSpeed: 4 * 1000, // four seconds
 	},
 
@@ -56,7 +56,6 @@ Module.register('MMM-CatFacts', {
 		}, this.config.updateInterval);
 	},
 	socketNotificationReceived: function(notification, payload) {
-		Log.log('socketNotificationReceived');
 		if (notification === "CATFACT_RESULT") {
 			this.result = payload;
 			this.updateDom(this.config.fadeSpeed);
