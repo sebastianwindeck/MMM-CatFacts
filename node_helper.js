@@ -31,8 +31,8 @@ module.exports = NodeHelper.create({
 
             res.on("data", function (error, response, body) {
                 console.log('MMM-CatFacts helper started getCatFact data');
-
-                if (!error && res.statusCode === 200) {
+                console.log(res);
+                if (!error && res.statusCode == 200) {
                     var result = JSON.parse(res.body);
                     parent.sendSocketNotification('CATFACT_RESULT', result);
 
