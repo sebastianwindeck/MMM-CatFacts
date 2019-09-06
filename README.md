@@ -1,5 +1,5 @@
 # Module: MMM-CatFacts
-Just a little simple plugin for MagicMirror to access the API of  [CatFacts](https://catfact.ninja/) as a stream for your mirror. 
+Just a little simple plugin for [MagicMirror](https://github.com/MichMich/MagicMirror/) to access the API of  [CatFacts](https://catfact.ninja/) as a stream for your mirror. 
 
 
 
