@@ -5,7 +5,7 @@ Just a little simple plugin for MagicMirror to access the API of  [CatFacts](htt
 
 **Screenshot**
 
-![](screenshot.jpg)
+![](screenshot.JPG)
 
 
 ## Installation
