@@ -8,7 +8,7 @@
 
 Module.register('MMM-CatFacts', {
 
-	result: {catfact: "loading cat fact..."},
+	result: {catfact: "Loading cat fact ..."},
 
 	defaults: {
 		title: "CatFacts",
@@ -41,7 +41,7 @@ Module.register('MMM-CatFacts', {
 
 	getCatFact: function() {
 		// Make the initial request to the helper then set up the timer to perform the update
-		this.sendSocketNotification("GET_FACT");
+		this.sendSocketNotification("GET_CATFACT");
 	},
 
 	scheduleUpdate: function() {
