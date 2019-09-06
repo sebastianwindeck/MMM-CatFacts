@@ -50,7 +50,7 @@ Module.register('MMM-CatFacts', {
 		}, this.config.updateInterval);
 	},
 	socketNotificationReceived: function(notification, payload) {
-		if (notification === "CATFACT_RESULT") {
+		if (notification == "CATFACT_RESULT") {
 			this.result = payload;
 			this.updateDom(this.config.fadeSpeed);
 		}

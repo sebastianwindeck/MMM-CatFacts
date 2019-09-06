@@ -51,7 +51,7 @@ module.exports = NodeHelper.create({
 
 
     socketNotificationReceived: function(notification, payload) {
-        if (notification === 'GET_CATFACT') {
+        if (notification == 'GET_CATFACT') {
             this.getCatFact(payload);
         }
     }
