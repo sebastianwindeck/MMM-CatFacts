@@ -1,0 +1,10 @@
+{
+  "name": "MMM-CatFacts",
+  "version": "1.0.0",
+  "author": "Sebastian Windeck",
+  "license": "MIT",
+  "main": "MMM-CatFacts.js",
+  "dependencies": {
+    
+  }
+}
