@@ -25,6 +25,7 @@ Module.register('MMM-CatFacts', {
 	},
 
 	getDom: function() {
+		Log.log('getDom');
 		var wrapper = document.createElement("div");
 
 		var catfact = document.createElement("div");
@@ -41,6 +42,7 @@ Module.register('MMM-CatFacts', {
 
 	getCatFact: function() {
 		// Make the initial request to the helper then set up the timer to perform the update
+		Log.log('GetFact');
 		this.sendSocketNotification("GET_CATFACT");
 	},
 
@@ -50,6 +52,7 @@ Module.register('MMM-CatFacts', {
 		}, this.config.updateInterval);
 	},
 	socketNotificationReceived: function(notification, payload) {
+		Log.log('socketNotificationReceived');
 		if (notification == "CATFACT_RESULT") {
 			this.result = payload;
 			this.updateDom(this.config.fadeSpeed);

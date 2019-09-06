@@ -15,6 +15,7 @@ module.exports = NodeHelper.create({
     },
 
     getCatFact: function (url) {
+        console.log('MMM-CatFacts helper started getCatFact');
         var parent = this; // save this object
         let options = {
             'method': 'GET',
@@ -29,6 +30,7 @@ module.exports = NodeHelper.create({
 
 
             res.on("data", function (error, response, body) {
+                console.log('MMM-CatFacts helper started getCatFact data');
 
                 if (!error && res.statusCode === 200) {
                     var result = JSON.parse(res.body);
@@ -37,6 +39,7 @@ module.exports = NodeHelper.create({
             });
 
             res.on("end", function (parent) {
+                console.log('MMM-CatFacts helper started getCatFact end');
                 var body = Buffer.concat(parent);
                 console.log(body.toString());
             });
@@ -51,6 +54,7 @@ module.exports = NodeHelper.create({
 
 
     socketNotificationReceived: function(notification, payload) {
+        console.log('MMM-CatFacts helper started socketNotificationReceived');
         if (notification == 'GET_CATFACT') {
             this.getCatFact(payload);
         }
