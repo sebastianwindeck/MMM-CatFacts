@@ -32,7 +32,7 @@ Module.register('MMM-CatFacts', {
 		catfact.className = "bright light medium";
 		catfact.style.textAlign = "center";
 		catfact.style.margin = "0 auto";
-		catfact.innerHTML = this.result["catfact"];
+		catfact.innerHTML = this.result["fact"];
 
 		wrapper.appendChild(catfact);
 		return wrapper;
@@ -53,7 +53,7 @@ Module.register('MMM-CatFacts', {
 	},
 	socketNotificationReceived: function(notification, payload) {
 		Log.log('socketNotificationReceived');
-		if (notification == "CATFACT_RESULT") {
+		if (notification === "CATFACT_RESULT") {
 			this.result = payload;
 			this.updateDom(this.config.fadeSpeed);
 		}

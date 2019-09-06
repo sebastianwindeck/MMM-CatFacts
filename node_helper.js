@@ -42,7 +42,7 @@ module.exports = NodeHelper.create({
                 var result = JSON.parse(body);
                 console.log(result);
                 console.log(result["fact"]);
-                parent.sendSocketNotification('CATFACT_RESULT',result["fact"]);
+                parent.sendSocketNotification('CATFACT_RESULT',result);
             });
 
             res.on("error", function (error) {
@@ -57,7 +57,7 @@ module.exports = NodeHelper.create({
 
     socketNotificationReceived: function(notification, payload) {
         console.log('MMM-CatFacts helper started socketNotificationReceived');
-        if (notification == 'GET_CATFACT') {
+        if (notification === 'GET_CATFACT') {
             this.getCatFact(payload);
         }
     }
