@@ -30,7 +30,7 @@ Module.register('MMM-CatFacts', {
 		header.className = "small dimmed";
 		header.style.textAlign = "center";
 		header.style.margin = "0 auto";
-		header.innerHTML = this.translate(title);
+		header.innerHTML = this.translate(this.config.title);
 		wrapper.appendChild(header);
 
 		var catfact = document.createElement("div");
