@@ -41,6 +41,7 @@ module.exports = NodeHelper.create({
                 console.log(body.toString());
                 var result = JSON.parse(body);
                 console.log(result);
+                console.log(result["fact"]);
                 parent.sendSocketNotification('CATFACT_RESULT',result["fact"]);
             });
 
