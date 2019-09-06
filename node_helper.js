@@ -6,7 +6,6 @@
  */
 
 var NodeHelper = require('node_helper');
-var request = require('request');
 var https = require('https')
 
 module.exports = NodeHelper.create({
@@ -16,7 +15,7 @@ module.exports = NodeHelper.create({
 
     getCatFact: function (url) {
         console.log('MMM-CatFacts helper started getCatFact');
-        var parent = this; // save this object
+
         let options = {
             'method': 'GET',
             'hostname': 'catfact.ninja',
@@ -28,25 +27,21 @@ module.exports = NodeHelper.create({
 
         var req = https.request(options, function (res) {
 
+            var chunks = [];
 
-            res.on("data", function (error, response, body) {
+            res.on("data", function (chunk) {
                 console.log('MMM-CatFacts helper started getCatFact data');
-                console.log(res);
-                if (!error && res.statusCode == 200) {
-                    var result = JSON.parse(res.body);
-                    parent.sendSocketNotification('CATFACT_RESULT', result);
-
-                }
-                console.log(result);
+                chunks.push(chunk);
             });
 
-            res.on("end", function (parent) {
+            res.on("end", function (chunk) {
                 console.log('MMM-CatFacts helper started getCatFact end');
-                var body = Buffer.concat(parent);
+                var body = Buffer.concat(chunks);
                 console.log(body.toString());
             });
 
             res.on("error", function (error) {
+                console.log('MMM-CatFacts helper started getCatFact error');
                 console.error(error);
             });
         });
