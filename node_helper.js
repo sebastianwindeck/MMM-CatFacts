@@ -15,6 +15,7 @@ module.exports = NodeHelper.create({
 
     getCatFact: function (url) {
         console.log('MMM-CatFacts helper started getCatFact');
+        var parent = this;
 
         let options = {
             'method': 'GET',
@@ -38,6 +39,9 @@ module.exports = NodeHelper.create({
                 console.log('MMM-CatFacts helper started getCatFact end');
                 var body = Buffer.concat(chunks);
                 console.log(body.toString());
+                var result = JSON.parse(body);
+                console.log(result);
+                parent.sendSocketNotification('CATFACT_RESULT',result['fact']);
             });
 
             res.on("error", function (error) {
